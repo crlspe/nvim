@@ -3,7 +3,10 @@
 1. Install NVIM
 2. Install Plug plugin manager
 3. Clone the repo on your ~/.config/
-4. Run NVIM and exetute :PlugUpdate
+4. Run `nvim` and exetute :PlugInstall
+5. Uncomment the line: 40, and save
+6. Ready to use
+
 
 ## KeyMaps 
 - Ctrl + /     => Toggle Comment Line       (for N, I modes)
