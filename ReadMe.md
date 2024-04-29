@@ -2,10 +2,15 @@
 ## Installation 
 1. Install NVIM
 2. Install Plug plugin manager
-3. Clone the repo on your ~/.config/
-4. Run `nvim` and exetute :PlugInstall
-5. Uncomment the line: 40, and save
-6. Ready to use
+   - Linux: `curl -fLo ~/.var/app/io.neovim.nvim/data/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+   - Windows: `iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force`
+ 
+4. Clone the repo on your ~/.config/
+5. Run `nvim` and exetute :PlugInstall
+6. Uncomment the line: 40, and save
+7. Ready to use
 
 
 ## KeyMaps 
