@@ -1,7 +1,7 @@
 # Super Basic Nvim Configuration for GoLang
 ## Installation 
 1. Install NVIM
-2. Install Plug plugin manager [vim-plug]([https://github.com/junegunn/vim-plug])
+2. Install Plug plugin manager [vim-plug](https://github.com/junegunn/vim-plug)
 3. Clone the repo on your ~/.config/
 4. Run `nvim` and exetute :PlugInstall
 5. Uncomment the line: 40, and save
