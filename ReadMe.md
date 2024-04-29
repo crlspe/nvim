@@ -1,3 +1,4 @@
+# Basic Nvim Configuration for GoLang
 ## Installation 
 1. Install NVIM
 2. Install Plug plugin manager
