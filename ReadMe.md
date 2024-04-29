@@ -2,7 +2,7 @@
 ## Installation 
 1. Install NVIM
 2. Install Plug plugin manager [vim-plug](https://github.com/junegunn/vim-plug)
-3. Clone the repo on your ~/.config/
+3. Clone the repo on your `cd ~/.config/ && git clone https://github.com/crlspe/nvim.git`
 4. Run `nvim` and exetute :PlugInstall
 5. Uncomment the line: 40, and save
 6. Ready to use
