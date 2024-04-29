@@ -25,7 +25,7 @@
 - Alt + Up     => Moves the line Up         (for N mode)
 - Alt + Down   => Moves the line Down       (for N mode)
 ## Theme Available
-#### Set the The on line: `:144`
+#### Set theme (colorscheme) on line: `:144`
 - `tokyonight`
 - `pine-rose`
 - `seoul256`
