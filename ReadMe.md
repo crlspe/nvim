@@ -4,7 +4,7 @@
 2. Install Plug plugin manager [vim-plug](https://github.com/junegunn/vim-plug)
 3. Clone the repo on your `cd ~/.config/ && git clone https://github.com/crlspe/nvim.git`
 4. Run `nvim` and exetute :PlugInstall
-5. Un-comment the line: 40 of the `init.lua` file: `nvim ~/.config/nvim/init.lua` 
+5. Comment `--` the line: 40 of the `init.lua` file: `nvim ~/.config/nvim/init.lua` 
 6. Ready to use
 
 
