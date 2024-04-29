@@ -11,7 +11,6 @@ Plug('nvim-tree/nvim-web-devicons')
 Plug('akinsho/bufferline.nvim')
 Plug('akinsho/toggleterm.nvim')
 
--- Plug('mfussenegger/nvim-lint')
 -- Themes --------------------------------------------------------------------- 
 Plug('https://github.com/junegunn/seoul256.vim.git')
 Plug('folke/tokyonight.nvim')
@@ -23,6 +22,7 @@ Plug('tpope/vim-commentary')
 Plug('mg979/vim-visual-multi')
 -------------------------------------------------------------------------------
 -- Programing Languages Helpers 
+-- Plug('mfussenegger/nvim-lint') -- Linter Code
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'}) -- Syntax Parser
 Plug('williamboman/mason.nvim')								-- LSP REQUIREMENTS
 Plug('williamboman/mason-lspconfig.nvim')					-- LSP REQUIREMENTS
@@ -131,9 +131,6 @@ cmp.setup({
   }),
 })
 -----------------------------------------------------------------------------------
--- MULTI CURSOR Assign key mappings
-vim.api.nvim_set_keymap('n', '<C-d>', '<Plug>(VM-Find-Under)', {})
-vim.api.nvim_set_keymap('x', '<C-d>', '<Plug>(VM-Find-Subword-Under)', {})
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
 -- VIM SETTINGS
@@ -181,6 +178,10 @@ vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-Up>', ':move -2<CR>==', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-Down>', ':move +1<CR>==', {noremap = true})
 -----------------------------------------------------------------------------------
+-- MULTI CURSOR Assign key mappings
+vim.api.nvim_set_keymap('n', '<C-d>', '<Plug>(VM-Find-Under)', {})
+vim.api.nvim_set_keymap('i', '<C-d>', '<Esc><Plug>(VM-Find-Under)', {})
+vim.api.nvim_set_keymap('x', '<C-d>', '<Plug>(VM-Find-Subword-Under)', {})
 -- Moving Between Opened Buffers (Bufferline)
 vim.api.nvim_set_keymap('n', '<Tab>', ':bNext<CR>==', {noremap = true})
 vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], {noremap = true})
@@ -190,7 +191,13 @@ vim.api.nvim_set_keymap('n', '<M-1>', ':ToggleTerm 1<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-2>', ':ToggleTerm 2<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-3>', ':ToggleTerm 3<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-4>', ':ToggleTerm 4<CR>', {noremap = true})
--------------------------------------------------------------------------------
+
+vim.api.nvim_set_keymap('i', '<C-t>', '<Esc>:ToggleTerm<CR>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<M-1>', '<Esc>:ToggleTerm 1<CR>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<M-2>', '<Esc>:ToggleTerm 2<CR>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<M-3>', '<Esc>:ToggleTerm 3<CR>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<M-4>', '<Esc>:ToggleTerm 4<CR>', {noremap = true})
+
 vim.api.nvim_set_keymap('t', '<C-t>', [[<C-\><C-n><C-t>]], {noremap = true})
 vim.api.nvim_set_keymap('t', '<M-1>', [[<C-\><C-n><C-t>]], {noremap = true})
 vim.api.nvim_set_keymap('t', '<M-2>', [[<C-\><C-n><C-t>]], {noremap = true})
