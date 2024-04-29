@@ -24,9 +24,8 @@
 - Alt + 4      => Toggle Terminal 4         (for N, I modes)
 - Alt + Up     => Moves the line Up         (for N mode)
 - Alt + Down   => Moves the line Down       (for N mode)
-## Theme Available
-#### Set theme (colorscheme) on line: `:144`
+## Themes Available
 - `tokyonight`
 - `pine-rose`
 - `seoul256`
-
+#### Set theme (colorscheme) on line: `:144`
