@@ -34,7 +34,7 @@ vim.call('plug#end')
 -------------------------------------------------------------------------------
 
 -----------------------------------------------------
--- UNCOMMENT THIS LINE AFTER THE FIRST PlugInstall 
+-- COMMENT THIS LINE AFTER THE FIRST RUN of :PlugInstall 
 if true then return end
 ------------------------------------------------------
 
