@@ -5,7 +5,6 @@ local Plug = vim.fn['plug#']
 -------------------------------------------------------------------------------
 vim.call('plug#begin')
 -------------------------------------------------------------------------------
--- Plug('')
 -- Plug('vim-airline/vim-airline')
 Plug('nvim-tree/nvim-web-devicons')
 Plug('akinsho/bufferline.nvim')
@@ -22,7 +21,6 @@ Plug('tpope/vim-commentary')
 Plug('mg979/vim-visual-multi')
 -------------------------------------------------------------------------------
 -- Programing Languages Helpers 
--- Plug('mfussenegger/nvim-lint') -- Linter Code
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'}) -- Syntax Parser
 Plug('williamboman/mason.nvim')								-- LSP REQUIREMENTS
 Plug('williamboman/mason-lspconfig.nvim')					-- LSP REQUIREMENTS
@@ -46,51 +44,42 @@ if true then return end
 -- TOGGLE TERM 
 require("toggleterm").setup()
 -------------------------------------------------------------------------------
--- LINTER
---vim.api.nvim_create_autocmd({ "BufWritePost" }, {
---  callback = function()
---    require("lint").try_lint()
---    require("lint").try_lint("cspell")
---    require("lint").try_lint("golangcilint")
---  end,
---})
--------------------------------------------------------------------------------
 -- TOKYO NIGHT THEME CONFIGURATION
 local bg = "#011628"
-    local bg_dark = "#011423"
-    local bg_highlight = "#143652"
-    local bg_search = "#0A64AC"
-    local bg_visual = "#275378"
-    local fg = "#CBE0F0"
-    local fg_dark = "#B4D0E9"
-    local fg_gutter = "#627E97"
-    local border = "#547998"
+local bg_dark = "#011423"
+local bg_highlight = "#143652"
+local bg_search = "#0A64AC"
+local bg_visual = "#275378"
+local fg = "#CBE0F0"
+local fg_dark = "#B4D0E9"
+local fg_gutter = "#627E97"
+local border = "#547998"
 
-    require("tokyonight").setup({
-      style = "night",
-      transparent = transparent,
-      styles = {
-        sidebars = transparent and "transparent" or "dark",
-        floats = transparent and "transparent" or "dark",
-      },
-      on_colors = function(colors)
-        colors.bg = bg
-        colors.bg_dark = transparent and colors.none or bg_dark
-        colors.bg_float = transparent and colors.none or bg_dark
-        colors.bg_highlight = bg_highlight
-        colors.bg_popup = bg_dark
-        colors.bg_search = bg_search
-        colors.bg_sidebar = transparent and colors.none or bg_dark
-        colors.bg_statusline = transparent and colors.none or bg_dark
-        colors.bg_visual = bg_visual
-        colors.border = border
-        colors.fg = fg
-        colors.fg_dark = fg_dark
-        colors.fg_float = fg
-        colors.fg_gutter = fg_gutter
-        colors.fg_sidebar = fg_dark
-      end,
-    })
+require("tokyonight").setup({
+  style = "night",
+  transparent = transparent,
+  styles = {
+    sidebars = transparent and "transparent" or "dark",
+    floats = transparent and "transparent" or "dark",
+  },
+  on_colors = function(colors)
+    colors.bg = bg
+    colors.bg_dark = transparent and colors.none or bg_dark
+    colors.bg_float = transparent and colors.none or bg_dark
+    colors.bg_highlight = bg_highlight
+    colors.bg_popup = bg_dark
+    colors.bg_search = bg_search
+    colors.bg_sidebar = transparent and colors.none or bg_dark
+    colors.bg_statusline = transparent and colors.none or bg_dark
+    colors.bg_visual = bg_visual
+    colors.border = border
+    colors.fg = fg
+    colors.fg_dark = fg_dark
+    colors.fg_float = fg
+    colors.fg_gutter = fg_gutter
+    colors.fg_sidebar = fg_dark
+  end,
+})
 -------------------------------------------------------------------------------
 -- BUFFER LINE 
 vim.opt.termguicolors = true
