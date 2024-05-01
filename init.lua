@@ -5,12 +5,13 @@ local Plug = vim.fn['plug#']
 -------------------------------------------------------------------------------
 vim.call('plug#begin')
 -------------------------------------------------------------------------------
-Plug('itchyny/lightline.vim')
 Plug('nvim-tree/nvim-web-devicons')
-Plug('akinsho/bufferline.nvim')
+Plug('akinsho/bufferline.nvim', { ['tag'] = '*' })
 Plug('akinsho/toggleterm.nvim')
+Plug('preservim/nerdtree')
 -- Themes --------------------------------------------------------------------- 
 Plug('Mofiqul/vscode.nvim')
+Plug('embark-theme/vim')
 -------------------------------------------------------------------------------
 -- Code Helpers ---------------------------------------------------------------
 Plug('Raimondi/delimitMate')
@@ -32,7 +33,7 @@ vim.call('plug#end')
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 -- COMMENT THIS LINE AFTER THE FIRST RUN of :PlugInstall 
-if true then return end
+--if true then return end
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 -- PLUGIN CONFIGURATION
@@ -84,8 +85,12 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ['<Tab>'] = cmp.mapping.confirm({select = true}),
     ['<CR>'] = cmp.mapping.confirm({select = true}),
+	["<C-Space>"] = cmp.mapping.complete(),
   }),
 })
+-----------------------------------------------------------------------------------
+-- Open File Manager on Start (NERDTree)
+-- vim.cmd([[autocmd VimEnter * NERDTree]])
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
 -- VIM SETTINGS
@@ -139,9 +144,10 @@ vim.api.nvim_set_keymap('n', '<C-d>', '<Plug>(VM-Find-Under)', {})
 vim.api.nvim_set_keymap('i', '<C-d>', '<Esc><Plug>(VM-Find-Under)', {})
 vim.api.nvim_set_keymap('x', '<C-d>', '<Plug>(VM-Find-Subword-Under)', {})
 -- Moving Between Opened Buffers (Bufferline)
-vim.api.nvim_set_keymap('n', '<Tab>', ':bNext<CR>==', {noremap = true})
-vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], {noremap = true})
+vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<CR>==', {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-Tab>', ':bprevious<CR>==', {noremap = true})
 -- TOGGLE TERM Convinience Keymaps
+vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-t>', ':ToggleTerm<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-1>', ':ToggleTerm 1<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-2>', ':ToggleTerm 2<CR>', {noremap = true})
@@ -157,3 +163,12 @@ vim.api.nvim_set_keymap('t', '<M-1>', [[<C-\><C-n><C-t>]], {noremap = true})
 vim.api.nvim_set_keymap('t', '<M-2>', [[<C-\><C-n><C-t>]], {noremap = true})
 vim.api.nvim_set_keymap('t', '<M-3>', [[<C-\><C-n><C-t>]], {noremap = true})
 vim.api.nvim_set_keymap('t', '<M-4>', [[<C-\><C-n><C-t>]], {noremap = true})
+
+-- Find Files in the folder (No plugins)
+vim.cmd('set path+=**')
+vim.cmd('set wildmenu')
+vim.api.nvim_set_keymap('n', '<C-p>', ':find ', {noremap = true})
+vim.api.nvim_set_keymap('i', '<C-p>', ':find ', {noremap = true})
+-- Move through file buffers 
+vim.api.nvim_set_keymap('n', '<M-p>', ':b ', {noremap = true})
+vim.api.nvim_set_keymap('i', '<M-p>', ':b ', {noremap = true})
