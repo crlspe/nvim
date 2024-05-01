@@ -164,7 +164,7 @@ vim.api.nvim_set_keymap('t', '<M-2>', [[<C-\><C-n><C-t>]], {noremap = true})
 vim.api.nvim_set_keymap('t', '<M-3>', [[<C-\><C-n><C-t>]], {noremap = true})
 vim.api.nvim_set_keymap('t', '<M-4>', [[<C-\><C-n><C-t>]], {noremap = true})
 
--- Find Files in the folder (No plugins)
+-- Fuzzy find files in folder (No plugins)
 vim.cmd('set path+=**')
 vim.cmd('set wildmenu')
 vim.api.nvim_set_keymap('n', '<C-p>', ':find ', {noremap = true})
