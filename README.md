@@ -18,14 +18,15 @@
 - Ctrl + Up    => Multicursor Up            (for N mode)
 - Ctrl + Down  => Multicursor Down          (for N mode)
 - Ctrl + t     => Toggle Terminal 1         (for N, I modes)       
+- Ctrl + p     => Fuzzy find files in folder(for N, I modes)       
+- ALt + p      => Find opened buffer files  (for N, I modes)       
 - Alt + 1      => Toggle Terminal 1         (for N, I modes) 
 - Alt + 2      => Toggle Terminal 2         (for N, I modes)
 - Alt + 3      => Toggle Terminal 3         (for N, I modes)
 - Alt + 4      => Toggle Terminal 4         (for N, I modes)
 - Alt + Up     => Moves the line Up         (for N mode)
 - Alt + Down   => Moves the line Down       (for N mode)
-## Themes Available
-- `tokyonight`
-- `pine-rose`
-- `seoul256`
-#### Set theme (colorscheme) on line: `:144`
+## Themes Installed
+- `vscode`    =>  Default
+- `embark`
+#### Set theme (colorscheme) on line: `~144`

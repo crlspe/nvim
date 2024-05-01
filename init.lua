@@ -95,9 +95,12 @@ cmp.setup({
 -----------------------------------------------------------------------------------
 -- VIM SETTINGS
 -----------------------------------------------------------------------------------
-vim.cmd('colorscheme vscode')							-- COLORSCHEMA
--- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})		-- TRANSPARENT BACKGROUND
--- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})	-- TRANSPARENT BACKGROUND
+-- SET COLORSCHEME
+vim.cmd('colorscheme vscode')						
+-----------------------------------------------------------------------------------
+-- FOR TRANSPARENT BACKGROUND 
+-- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})		
+-- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})	
 -----------------------------------------------------------------------------------
 vim.cmd('set tabstop=4')
 vim.cmd('set softtabstop=4')
@@ -163,7 +166,7 @@ vim.api.nvim_set_keymap('t', '<M-1>', [[<C-\><C-n><C-t>]], {noremap = true})
 vim.api.nvim_set_keymap('t', '<M-2>', [[<C-\><C-n><C-t>]], {noremap = true})
 vim.api.nvim_set_keymap('t', '<M-3>', [[<C-\><C-n><C-t>]], {noremap = true})
 vim.api.nvim_set_keymap('t', '<M-4>', [[<C-\><C-n><C-t>]], {noremap = true})
-
+-----------------------------------------------------------------------------------
 -- Fuzzy find files in folder (No plugins)
 vim.cmd('set path+=**')
 vim.cmd('set wildmenu')
@@ -172,3 +175,5 @@ vim.api.nvim_set_keymap('i', '<C-p>', ':find ', {noremap = true})
 -- Move through file buffers 
 vim.api.nvim_set_keymap('n', '<M-p>', ':b ', {noremap = true})
 vim.api.nvim_set_keymap('i', '<M-p>', ':b ', {noremap = true})
+-----------------------------------------------------------------------------------
+
