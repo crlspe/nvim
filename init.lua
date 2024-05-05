@@ -176,4 +176,20 @@ vim.api.nvim_set_keymap('i', '<C-p>', ':find ', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-p>', ':b ', {noremap = true})
 vim.api.nvim_set_keymap('i', '<M-p>', ':b ', {noremap = true})
 -----------------------------------------------------------------------------------
+--  Text Selection
+vim.api.nvim_set_keymap('i', '<S-End>', '<Esc>v$', {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-End>', 'v$', {noremap = true})
+
+vim.api.nvim_set_keymap('i', '<S-Right>', '<Esc>v', {noremap = true})
+vim.api.nvim_set_keymap('i', '<S-Left>',  '<Esc>v', {noremap = true})
+vim.api.nvim_set_keymap('i', '<S-Down>',  '<Esc>v', {noremap = true})
+vim.api.nvim_set_keymap('i', '<S-Up>',	  '<Esc>v', {noremap = true})
+
+vim.api.nvim_set_keymap('n', '<S-Right>', 'v', {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-Left>',  'v', {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-Down>',  'v', {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-Up>',    'v', {noremap = true})
+
+-- Adding Lines Normal Mode
+vim.api.nvim_set_keymap('n', '<Enter>', 'O<Esc>', {noremap = true})
 
