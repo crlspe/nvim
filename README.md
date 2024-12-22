@@ -64,6 +64,6 @@ LINE 36: -- if true then return end
 - `embark`
 ## Install LSP(s) with 
 ```
-:Mason
+:Mason gopls
 ```
 #### Set theme (colorscheme) on line: `~144`
