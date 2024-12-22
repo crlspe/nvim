@@ -9,7 +9,7 @@ Plug('nvim-tree/nvim-web-devicons')
 Plug('akinsho/bufferline.nvim', { ['tag'] = '*' })
 Plug('akinsho/toggleterm.nvim')
 Plug('preservim/nerdtree')
--- Themes --------------------------------------------------------------------- 
+-- Themes ---------------------------------------------------------------------
 Plug('Mofiqul/vscode.nvim')
 Plug('embark-theme/vim')
 -------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ Plug('tpope/vim-commentary')
 Plug('mg979/vim-visual-multi')
 Plug('joshdick/onedark.vim')
 -------------------------------------------------------------------------------
--- Programing Languages Helpers 
+-- Programing Languages Helpers
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})	-- Syntax Parser
 Plug('williamboman/mason.nvim')									-- LSP REQUIREMENTS
 Plug('williamboman/mason-lspconfig.nvim')						-- LSP REQUIREMENTS
@@ -27,23 +27,23 @@ Plug('neovim/nvim-lspconfig')									-- LSP REQUIREMENTS
 Plug('hrsh7th/nvim-cmp')										-- LSP REQUIREMENTS
 Plug('hrsh7th/cmp-nvim-lsp')									-- LSP REQUIREMENTS
 Plug('L3MON4D3/LuaSnip')										-- LSP REQUIREMENTS
-Plug('VonHeikemen/lsp-zero.nvim', {['branch'] = 'v3.x'})		-- LSP REQUIREMENTS 
+Plug('VonHeikemen/lsp-zero.nvim', {['branch'] = 'v3.x'})		-- LSP REQUIREMENTS
 -------------------------------------------------------------------------------
 vim.call('plug#end')
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
--- COMMENT THIS LINE AFTER THE FIRST RUN of :PlugInstall 
-if true then return end
+-- COMMENT THIS LINE AFTER THE FIRST RUN of :PlugInstall
+-- if true then return end
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 -- PLUGIN CONFIGURATION
 -------------------------------------------------------------------------------
 vim.g.lightline = {  colorscheme = 'wombat' }
 -------------------------------------------------------------------------------
--- TOGGLE TERM 
+-- TOGGLE TERM
 require("toggleterm").setup()
 -------------------------------------------------------------------------------
--- BUFFER LINE 
+-- BUFFER LINE
 vim.opt.termguicolors = true
 require("bufferline").setup{}
 -------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 -------------------------------------------------------------------------------
--- LSP-ZERO 
+-- LSP-ZERO
 local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
@@ -81,7 +81,7 @@ cmp.setup({
   window = {
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
-  },	
+  },
   mapping = cmp.mapping.preset.insert({
     ['<Tab>'] = cmp.mapping.confirm({select = true}),
     ['<CR>'] = cmp.mapping.confirm({select = true}),
@@ -96,11 +96,11 @@ cmp.setup({
 -- VIM SETTINGS
 -----------------------------------------------------------------------------------
 -- SET COLORSCHEME
-vim.cmd('colorscheme vscode')						
+vim.cmd('colorscheme vscode')
 -----------------------------------------------------------------------------------
--- FOR TRANSPARENT BACKGROUND 
-vim.api.nvim_set_hl(0, "Normal", {bg = "none"})		
-vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})	
+-- FOR TRANSPARENT BACKGROUND
+vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 -----------------------------------------------------------------------------------
 vim.cmd('set tabstop=4')
 vim.cmd('set softtabstop=4')
@@ -122,10 +122,10 @@ vim.cmd('set t_Co=256')
 function vimCmd(cmd)
     vim.cmd("normal " .. cmd)
 end
--- Replacing key mapping for gcc Comments 
+-- Replacing key mapping for gcc Comments
 vim.api.nvim_set_keymap('n', '<C-_>', '<cmd>lua vimCmd("gcc")<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<C-_>', '<cmd>lua vimCmd("gcc")<CR>', {noremap = true, silent = true})
--- Enter command faster 
+-- Enter command faster
 vim.api.nvim_set_keymap('n', ';', ':', {noremap = true})
 vim.api.nvim_set_keymap('i', ';;', '<Esc>', {noremap = true})
 -- Convert word to Upper case
@@ -172,7 +172,7 @@ vim.cmd('set path+=**')
 vim.cmd('set wildmenu')
 vim.api.nvim_set_keymap('n', '<C-p>', ':find ', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-p>', ':find ', {noremap = true})
--- Move through file buffers 
+-- Move through file buffers
 vim.api.nvim_set_keymap('n', '<M-p>', ':b ', {noremap = true})
 vim.api.nvim_set_keymap('i', '<M-p>', ':b ', {noremap = true})
 -----------------------------------------------------------------------------------
@@ -192,7 +192,7 @@ vim.api.nvim_set_keymap('n', '<S-Up>',    'v', {noremap = true})
 
 -- Adding Lines Normal Mode
 vim.api.nvim_set_keymap('n', '<Enter>', 'O<Esc>', {noremap = true})
--- Maps Ctrl + z to :undo  
+-- Maps Ctrl + z to :undo
 vim.api.nvim_set_keymap('n', '<C-z>', ':undo<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<C-z>', '<Esc>:undo<CR>', {noremap = true, silent = true})
 -- Maps Ctrl + Shift + z to redo
@@ -206,7 +206,3 @@ vim.api.nvim_set_keymap('v', '<C-c>', '"+y', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-v>', 'P', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<C-v>', '<Esc>P<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '<C-v>', 'p', {noremap = true, silent = true})
-
-
-
-
