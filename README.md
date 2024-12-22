@@ -23,7 +23,7 @@ nvim
 ```
 6. Open NeoVim configuration file
 ```
-:o ~/.config/nvim/init.lua
+:e ~/.config/nvim/init.lua
 ```
 or
 ```sh
@@ -48,7 +48,7 @@ LINE 36: -- if true then return end
 | Ctrl + Up        | Multicursor Up                   | N                    |
 | Ctrl + Down      | Multicursor Down                 | N                    |
 | Ctrl + t         | Toggle Terminal 1                | N, I                 |
-| Ctrl + p         | Fuzzy find files in folder      | N, I                 |
+| Ctrl + p         | Fuzzy find files in folder       | N, I                 |
 | Alt + p          | Find opened buffer files         | N, I                 |
 | Alt + 1          | Toggle Terminal 1                | N, I                 |
 | Alt + 2          | Toggle Terminal 2                | N, I                 |
@@ -57,9 +57,13 @@ LINE 36: -- if true then return end
 | Alt + Up         | Moves the line Up                | N                    |
 | Alt + Down       | Moves the line Down              | N                    |
 | Ctrl + c         | Yanks line when no selection, yanks selection | N, I, V |
-| Ctrl + z         | Undo last change (:undo) | N, I |
-| Ctrl + Shift + z | Redo last change (:redo) | N, I |
+| Ctrl + z         | Undo last change (:undo)         | N, I                 |
+| Ctrl + Shift + z | Redo last change (:redo)         | N, I                 |
 ## Themes Installed
 - `vscode`    =>  Default
 - `embark`
+## Install LSP(s) with 
+```
+:Mason
+```
 #### Set theme (colorscheme) on line: `~144`
