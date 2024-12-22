@@ -90,7 +90,7 @@ cmp.setup({
 })
 -----------------------------------------------------------------------------------
 -- Open File Manager on Start (NERDTree)
--- vim.cmd([[autocmd VimEnter * NERDTree]])
+--vim.cmd([[autocmd VimEnter * NERDTree]])
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
 -- VIM SETTINGS
@@ -99,8 +99,8 @@ cmp.setup({
 vim.cmd('colorscheme vscode')						
 -----------------------------------------------------------------------------------
 -- FOR TRANSPARENT BACKGROUND 
--- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})		
--- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})	
+vim.api.nvim_set_hl(0, "Normal", {bg = "none"})		
+vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})	
 -----------------------------------------------------------------------------------
 vim.cmd('set tabstop=4')
 vim.cmd('set softtabstop=4')
@@ -192,4 +192,21 @@ vim.api.nvim_set_keymap('n', '<S-Up>',    'v', {noremap = true})
 
 -- Adding Lines Normal Mode
 vim.api.nvim_set_keymap('n', '<Enter>', 'O<Esc>', {noremap = true})
+-- Maps Ctrl + z to :undo  
+vim.api.nvim_set_keymap('n', '<C-z>', ':undo<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-z>', '<Esc>:undo<CR>', {noremap = true, silent = true})
+-- Maps Ctrl + Shift + z to redo
+vim.api.nvim_set_keymap('n', '<C-S-z>', ':redo<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-S-z>', '<Esc>:redo<CR>', {noremap = true, silent = true})
+-- Maps Ctrl + c to yank text
+vim.api.nvim_set_keymap('n', '<C-c>', 'yy<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-c>', '<Esc>yy<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<C-c>', '"+y', {noremap = true, silent = true})
+-- Maps Ctrl + v to paste text
+vim.api.nvim_set_keymap('n', '<C-v>', 'P', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-v>', '<Esc>P<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<C-v>', 'p', {noremap = true, silent = true})
+
+
+
 
