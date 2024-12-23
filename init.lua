@@ -12,6 +12,7 @@ Plug('preservim/nerdtree')
 -- Themes ---------------------------------------------------------------------
 Plug('Mofiqul/vscode.nvim')
 Plug('embark-theme/vim')
+Plug('folke/tokyonight.nvim')
 -------------------------------------------------------------------------------
 -- Code Helpers ---------------------------------------------------------------
 Plug('Raimondi/delimitMate')
@@ -96,11 +97,11 @@ cmp.setup({
 -- VIM SETTINGS
 -----------------------------------------------------------------------------------
 -- SET COLORSCHEME
-vim.cmd('colorscheme vscode')
+vim.cmd('colorscheme onedark')
 -----------------------------------------------------------------------------------
 -- FOR TRANSPARENT BACKGROUND
-vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
-vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+--vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+--vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 -----------------------------------------------------------------------------------
 vim.cmd('set tabstop=4')
 vim.cmd('set softtabstop=4')
@@ -123,8 +124,8 @@ function vimCmd(cmd)
     vim.cmd("normal " .. cmd)
 end
 -- Replacing key mapping for gcc Comments
-vim.api.nvim_set_keymap('n', '<C-_>', '<cmd>lua vimCmd("gcc")<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', '<C-_>', '<cmd>lua vimCmd("gcc")<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-/>', '<cmd>lua vimCmd("gcc")<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-/>', '<cmd>lua vimCmd("gcc")<CR>', {noremap = true, silent = true})
 -- Enter command faster
 vim.api.nvim_set_keymap('n', ';', ':', {noremap = true})
 vim.api.nvim_set_keymap('i', ';;', '<Esc>', {noremap = true})
