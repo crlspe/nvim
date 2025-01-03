@@ -34,7 +34,7 @@ vim.call('plug#end')
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 -- COMMENT THIS LINE AFTER THE FIRST RUN of :PlugInstall
--- if true then return end
+if true then return end
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 -- PLUGIN CONFIGURATION
@@ -72,7 +72,7 @@ require('mason-lspconfig').setup({
     function(server_name)
       require('lspconfig')[server_name].setup({})
     end,
-  },
+},
 })
 ---------------------------------------------------------------------------------
 -- AUTOCOMPLETE
@@ -97,11 +97,11 @@ cmp.setup({
 -- VIM SETTINGS
 -----------------------------------------------------------------------------------
 -- SET COLORSCHEME
-vim.cmd('colorscheme onedark')
+vim.cmd('colorscheme tokyonight-moon')
 -----------------------------------------------------------------------------------
 -- FOR TRANSPARENT BACKGROUND
---vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
---vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 -----------------------------------------------------------------------------------
 vim.cmd('set tabstop=4')
 vim.cmd('set softtabstop=4')
@@ -124,8 +124,8 @@ function vimCmd(cmd)
     vim.cmd("normal " .. cmd)
 end
 -- Replacing key mapping for gcc Comments
-vim.api.nvim_set_keymap('n', '<C-/>', '<cmd>lua vimCmd("gcc")<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', '<C-/>', '<cmd>lua vimCmd("gcc")<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-_>', '<cmd>lua vimCmd("gcc")<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-_>', '<cmd>lua vimCmd("gcc")<CR>', {noremap = true, silent = true})
 -- Enter command faster
 vim.api.nvim_set_keymap('n', ';', ':', {noremap = true})
 vim.api.nvim_set_keymap('i', ';;', '<Esc>', {noremap = true})
@@ -140,8 +140,10 @@ vim.api.nvim_set_keymap('i', '<C-x>', '<Esc>ddi', {noremap = true, silent = true
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', {noremap = true})
 -- Move Line Up or Down
-vim.api.nvim_set_keymap('n', '<M-Up>', ':move -2<CR>==', {noremap = true})
-vim.api.nvim_set_keymap('n', '<M-Down>', ':move +1<CR>==', {noremap = true})
+vim.api.nvim_set_keymap('i', '<S-Up>', '<Esc>:move .-2<CR>==', {noremap = true})
+vim.api.nvim_set_keymap('i', '<S-Down>', '<Esc>:move .+1<CR>==', {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-Up>', ':move .-2<CR>==', { noremap = true })
+vim.api.nvim_set_keymap('n', '<S-Down>', ':move .+1<CR>==', { noremap = true })
 -----------------------------------------------------------------------------------
 -- MULTI CURSOR Assign key mappings
 vim.api.nvim_set_keymap('n', '<C-d>', '<Plug>(VM-Find-Under)', {})
@@ -178,18 +180,20 @@ vim.api.nvim_set_keymap('n', '<M-p>', ':b ', {noremap = true})
 vim.api.nvim_set_keymap('i', '<M-p>', ':b ', {noremap = true})
 -----------------------------------------------------------------------------------
 --  Text Selection
+vim.api.nvim_set_keymap('i', '<S-Home>', '<Esc>v0', {noremap = true})
 vim.api.nvim_set_keymap('i', '<S-End>', '<Esc>v$', {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-Home>', 'v0', {noremap = true})
 vim.api.nvim_set_keymap('n', '<S-End>', 'v$', {noremap = true})
 
 vim.api.nvim_set_keymap('i', '<S-Right>', '<Esc>v', {noremap = true})
 vim.api.nvim_set_keymap('i', '<S-Left>',  '<Esc>v', {noremap = true})
-vim.api.nvim_set_keymap('i', '<S-Down>',  '<Esc>v', {noremap = true})
-vim.api.nvim_set_keymap('i', '<S-Up>',	  '<Esc>v', {noremap = true})
+-- vim.api.nvim_set_keymap('i', '<S-Down>',  '<Esc>v', {noremap = true})
+-- vim.api.nvim_set_keymap('i', '<S-Up>',	  '<Esc>v', {noremap = true})
 
 vim.api.nvim_set_keymap('n', '<S-Right>', 'v', {noremap = true})
 vim.api.nvim_set_keymap('n', '<S-Left>',  'v', {noremap = true})
-vim.api.nvim_set_keymap('n', '<S-Down>',  'v', {noremap = true})
-vim.api.nvim_set_keymap('n', '<S-Up>',    'v', {noremap = true})
+-- vim.api.nvim_set_keymap('n', '<S-Down>',  'v', {noremap = true})
+-- vim.api.nvim_set_keymap('n', '<S-Up>',    'v', {noremap = true})
 
 -- Adding Lines Normal Mode
 vim.api.nvim_set_keymap('n', '<Enter>', 'O<Esc>', {noremap = true})
@@ -207,3 +211,8 @@ vim.api.nvim_set_keymap('v', '<C-c>', '"+y', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-v>', 'P', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<C-v>', '<Esc>P<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '<C-v>', 'p', {noremap = true, silent = true})
+-- Map Ctrl+q to :q
+vim.api.nvim_set_keymap('n', '<C-q>', ':q<CR>', { noremap = true, silent = true })
+-- Make :Q behave the same as :q
+vim.cmd('command! Q q')
+
